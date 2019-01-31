@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 import time
 from pandas import DataFrame
+from datetime import datetime
 
 #===============================================================================================================
 #=Variables=====================================================================================================
@@ -13,6 +14,7 @@ itemList = {
 inputKey = ""
 keys = []
 inputEnd = False
+today = datetime.now()
 #===============================================================================================================
 #=Functions=====================================================================================================
 def matchFilter(itemName):
@@ -27,6 +29,7 @@ def matchFilter(itemName):
 print("=======================================================================")
 print("    This is a program for crawling items from EBay searching result    ")
 print("=======================================================================\n")
+print("Today is ", today.strftime('%Y-%m-%d'),". \n")
 url = input("Please input an URL of any page of searching result:\n")
 #Example: "https://www.ebay.com/sch/i.html?_from=R40&_nkw=iphone6&_sacat=0&_dmd=1&rt=nc&_prodsch=0&_ipg=200&_pgn=1"
 isOnePage = True
